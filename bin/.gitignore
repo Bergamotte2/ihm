@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 /.classpath
 /.project
 /application/
 /metier/
+=======
+/application/
+/metier/
+/.classpath
+/.project
+>>>>>>> b7956dd2df403dbd592975b8a308103c9a1dcb0f

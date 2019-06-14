@@ -25,5 +25,6 @@ public class Ruban extends JPanel {
 		
 		setBackground(Color.RED);
 		setBorder(BorderFactory.createEmptyBorder(20, 15, 20, 15));
+
 	}
 }

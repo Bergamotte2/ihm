@@ -33,10 +33,12 @@ public class FenetreATM extends JFrame {
 		JPanel centerPane = new JPanel();
 		centerPane.setLayout(new BoxLayout(centerPane, BoxLayout.Y_AXIS));
 		
-		ConteneurMilieu carreRouge = new ConteneurMilieu(null); /* a déjà une prefered size */
-		centerPane.add(carreRouge);
-		JLabel empty = new JLabel();
-		centerPane.add(empty);
+		/**
+		*ConteneurMilieu carreRouge = new ConteneurMilieu(null); a déjà une prefered size
+		*centerPane.add(carreRouge);
+		*JLabel empty = new JLabel();
+		*centerPane.add(empty);
+		*/
 		
 		
 		return contentPane;
