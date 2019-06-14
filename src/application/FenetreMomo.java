@@ -40,14 +40,16 @@ public class FenetreMomo extends JFrame {
 		panew.setPreferredSize(new Dimension(400, 200));
 		JPanel panee = new JPanel();
 		panee.setPreferredSize(new Dimension(400, 200));
+		
+		CodeBanque codeBanque = new CodeBanque((JFrame)this);
 	
-		ConteneurMilieu codeBanque = new ConteneurMilieu("Veuillez saisir votre code confidentiel");
+		ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 80, codeBanque);
 		
 		contentPane.add(paneup, BorderLayout.NORTH);
 		contentPane.add(paned, BorderLayout.SOUTH);
 		contentPane.add(panew, BorderLayout.WEST);
 		contentPane.add(panee, BorderLayout.EAST);
-		contentPane.add(codeBanque, BorderLayout.CENTER);
+		contentPane.add(cM, BorderLayout.CENTER);
 		
 		
 		return contentPane;

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -15,14 +16,20 @@ public class ConteneurMilieu extends JPanel {
 		setBackground(Color.RED);
 	}
 	
-	public ConteneurMilieu(String mess) {
+	public ConteneurMilieu(String mess, int size, JPanel content) {
 		super();
 		
-		JLabel message = new JLabel(mess, JLabel.CENTER);
+		setLayout(new BorderLayout());
+		JLabel message = new JLabel(mess);
 		message.setForeground(Color.white);
-		message.setFont(new Font("Serif", Font.PLAIN, 80));
-		setBackground(Color.RED);
+		message.setFont(new Font("Serif", Font.PLAIN, size));
+		message.setBorder(BorderFactory.createEmptyBorder(100, 200, 50, 200));
 		
-		this.add(message);
+		
+		
+		setBackground(Color.RED);
+
+		this.add(message, BorderLayout.NORTH);
+		this.add(content, BorderLayout.CENTER);
 	}
 }
