@@ -14,8 +14,8 @@ public class Ruban extends JPanel {
 		
 		JLabel labelTitreG = new JLabel(titreG);
 		JLabel labelTitreD = new JLabel(titreD);
-		labelTitreG.setFont(labelTitreG.getFont().deriveFont(20.0f));
-		labelTitreD.setFont(labelTitreD.getFont().deriveFont(20.0f));
+		labelTitreG.setFont(labelTitreG.getFont().deriveFont(30.0f));
+		labelTitreD.setFont(labelTitreD.getFont().deriveFont(30.0f));
 		labelTitreG.setForeground(Color.WHITE);
 		labelTitreD.setForeground(Color.WHITE);
 		
@@ -24,6 +24,6 @@ public class Ruban extends JPanel {
 		this.add(labelTitreD, BorderLayout.EAST);
 		
 		setBackground(Color.RED);
-		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		setBorder(BorderFactory.createEmptyBorder(20, 15, 20, 15));
 	}
 }

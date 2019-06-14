@@ -27,11 +27,16 @@ public class FenetreATM extends JFrame {
 		contentPane.setOpaque(true);
 		contentPane.setBackground(Color.WHITE);
 		
-		Ruban nomBanque = new Ruban("Banque machin", "M.DUPONT");
-		contentPane.add(nomBanque, BorderLayout.NORTH);
+		Ruban infosBanque = new Ruban("The Banque", "M.DUPONT");
+		contentPane.add(infosBanque, BorderLayout.NORTH);
 	
-		JLabel tmpLabel = new JLabel("test");
-		contentPane.add(tmpLabel, BorderLayout.CENTER);
+		JPanel centerPane = new JPanel();
+		centerPane.setLayout(new BoxLayout(centerPane, BoxLayout.Y_AXIS));
+		
+		ConteneurMilieu carreRouge = new ConteneurMilieu(null); /* a déjà une prefered size */
+		centerPane.add(carreRouge);
+		JLabel empty = new JLabel();
+		centerPane.add(empty);
 		
 		
 		return contentPane;
