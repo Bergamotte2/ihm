@@ -23,7 +23,7 @@ public class ConteneurMilieu extends JPanel {
 		JLabel message = new JLabel(mess);
 		message.setForeground(Color.white);
 		message.setFont(new Font("Serif", Font.PLAIN, size));
-		message.setBorder(BorderFactory.createEmptyBorder(100, 200, 50, 200));
+		message.setBorder(BorderFactory.createEmptyBorder(100, 200, 20, 200));
 		
 		
 		

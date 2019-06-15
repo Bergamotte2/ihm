@@ -33,17 +33,17 @@ public class FenetreMomo extends JFrame {
 		contentPane.setBackground(Color.WHITE);
 		
 		JPanel paneup = new JPanel();
-		paneup.setPreferredSize(new Dimension(150, 200));
+		paneup.setPreferredSize(new Dimension(150, 150));
 		JPanel paned = new JPanel();
-		paned.setPreferredSize(new Dimension(150, 200));
+		paned.setPreferredSize(new Dimension(150, 150));
 		JPanel panew = new JPanel();
-		panew.setPreferredSize(new Dimension(400, 200));
+		panew.setPreferredSize(new Dimension(250, 200));
 		JPanel panee = new JPanel();
-		panee.setPreferredSize(new Dimension(400, 200));
+		panee.setPreferredSize(new Dimension(250, 200));
 		
 		CodeBanque codeBanque = new CodeBanque((JFrame)this);
 	
-		ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 80, codeBanque);
+		ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 50, codeBanque);
 		
 		contentPane.add(paneup, BorderLayout.NORTH);
 		contentPane.add(paned, BorderLayout.SOUTH);
