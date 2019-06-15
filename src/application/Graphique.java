@@ -53,19 +53,19 @@ public class Graphique extends JPanel {
 				Color Great = new Color(120, 201, 16);
 				
 				//X axis
-				g.setColor(MyBrown);
+				g.setColor(Neutral);
 				g.fillRect(75, 540, 1200, 8);
 				//Y axis
-				g.setColor(Neutral);
+				g.setColor(MyBrown);
 				g.fillRect(75, 60, 8, 480);
 				
 				//Y markers
-				g.setColor(Neutral);
+				g.setColor(MyBrown);
 				for(int i=10; i>=0; i--) {
 					g.fillRect(61, 540-i*48, 14, 3);
 					g.fillRect(83, 540-i*48+1, 1192, 1);
 				}
-				g.setColor(Neutral);
+				g.setColor(MyBrown);
 				for(int i=10; i>=0; i--) {
 					Integer amount = 100*i;
 					g.setFont(new Font("Roboto", Font.BOLD, 16)); 
@@ -73,7 +73,7 @@ public class Graphique extends JPanel {
 				}
 				
 				//X markers
-				g.setColor(MyBrown);
+				g.setColor(Neutral);
 				for(int i=0; i<8; i++) {
 					g.fillRect(83+i*160, 548, 3, 14);
 				}
@@ -82,7 +82,7 @@ public class Graphique extends JPanel {
 				int previousY = (int)540-freshHistory.get(dateArray.get(0))/100*48;
 				for(int i=0; i<8; i++) {
 					// Draw the String
-					g.setColor(MyBrown);
+					g.setColor(Neutral);
 					g.setFont(new Font("Roboto", Font.BOLD, 17));
 					g.drawString(goodFormat(dateArray.get(i)), (83+i*160)-17, 577);
 					

@@ -44,8 +44,8 @@ public class FenetreMomo extends JFrame {
 		CodeBanque codeBanque = new CodeBanque((JFrame)this);
 		ChoixMenu choix = new ChoixMenu();
 	
-		//ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 50, codeBanque);
-		ConteneurMilieu cM = new ConteneurMilieu(choix);
+		ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 50, codeBanque);
+		//ConteneurMilieu cM = new ConteneurMilieu(choix);
 		
 		contentPane.add(paneup, BorderLayout.NORTH);
 		contentPane.add(paned, BorderLayout.SOUTH);
