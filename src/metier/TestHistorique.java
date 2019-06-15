@@ -31,7 +31,7 @@ public class TestHistorique {
 		h.addData(0);
 		
 		// Affichage
-		TreeMap<LocalDate, Integer> freshHistory = h.history();
+		TreeMap<LocalDate, Integer> freshHistory = h.getWeekHistory();
 		
 		for (LocalDate date : freshHistory.keySet()) {
 		     System.out.println("Date: " + goodFormat(date) + " | Montant: " + freshHistory.get(date));

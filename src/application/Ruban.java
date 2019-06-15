@@ -23,7 +23,8 @@ public class Ruban extends JPanel {
 		this.add(labelTitreG, BorderLayout.WEST);
 		this.add(labelTitreD, BorderLayout.EAST);
 		
-		setBackground(Color.RED);
+		Color MyRed = new Color(220, 52, 61);
+		setBackground(MyRed);
 		setBorder(BorderFactory.createEmptyBorder(20, 15, 20, 15));
 
 	}

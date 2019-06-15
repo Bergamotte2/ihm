@@ -18,8 +18,7 @@ public class HistoriqueTransferts {
 		//empty method
 	}
 	
-	
-	public TreeMap<LocalDate, Integer> history() {
+	public TreeMap<LocalDate, Integer> getWeekHistory() {
 		
 		TreeMap<LocalDate, Integer> tmp = new TreeMap<LocalDate, Integer>();
 		
@@ -27,6 +26,11 @@ public class HistoriqueTransferts {
 		
 		tmp.putAll(collection.tailMap(lastWeek));
 		return tmp;
+	}
+	
+	
+	public TreeMap<LocalDate, Integer> getWholeHistory() {
+		return collection;
 	}
 	
 	
