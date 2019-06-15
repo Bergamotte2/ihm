@@ -47,10 +47,10 @@ public class Graphique extends JPanel {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				//Colors
-				Color Danger = new Color(147, 42, 91);
+				Color Danger = new Color(187, 42, 91);
 				Color MyBrown = new Color(76, 76, 76);
 				Color Neutral = new Color(25, 111, 107);
-				Color Great = new Color(168, 201, 16);
+				Color Great = new Color(120, 201, 16);
 				
 				//X axis
 				g.setColor(MyBrown);
@@ -96,7 +96,7 @@ public class Graphique extends JPanel {
 					if (previousY < y) {g.setColor(Danger);}
 					else {
 						if (previousY > y) {g.setColor(Great);}
-						else {g.setColor(Neutral);}
+						else {g.setColor(MyBrown);}
 					}
 					Graphics2D g2 = (Graphics2D) g;
 	                g2.setStroke(new BasicStroke(5));
