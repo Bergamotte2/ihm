@@ -57,20 +57,7 @@ public class HistoriqueTransferts {
 	
 	public void addData(Integer transferValue) {
 		
-		if (lastTransfer!=null) {
-			Period period = Period.between(lastTransfer, LocalDate.now());
-			int days = period.getDays();
-			if (days>0) {
-				for(int i=days-1; i>0; i--) {
-					collection.put(LocalDate.now().minusDays(i), lastValue);
-				}
-			}
-		}
-			
-		lastTransfer = LocalDate.now();
-		
-		collection.put(LocalDate.now(), lastValue + transferValue);
-		lastValue += transferValue;
+		addData(LocalDate.now(), transferValue);
 	}
 	
 	
