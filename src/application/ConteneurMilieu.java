@@ -10,10 +10,15 @@ import javax.swing.JPanel;
 
 public class ConteneurMilieu extends JPanel {
 	
-	public ConteneurMilieu() {
+	public ConteneurMilieu(JPanel content) {
 		super();
+		setLayout(new BorderLayout());
 		
 		setBackground(Color.RED);
+		
+		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		
+		this.add(content, BorderLayout.CENTER);
 	}
 	
 	public ConteneurMilieu(String mess, int size, JPanel content) {
