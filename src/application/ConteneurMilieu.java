@@ -2,6 +2,7 @@ package application;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 
 import javax.swing.BorderFactory;
@@ -28,8 +29,11 @@ public class ConteneurMilieu extends JPanel {
 		JLabel message = new JLabel(mess);
 		message.setForeground(Color.white);
 		message.setFont(new Font("Serif", Font.PLAIN, size));
-		message.setBorder(BorderFactory.createEmptyBorder(100, 200, 20, 200));
 		
+		message.setBorder(BorderFactory.createEmptyBorder(100, 200, 20, 200));
+		message.setHorizontalAlignment(JLabel.CENTER);
+		message.setVerticalAlignment(JLabel.CENTER);
+		message.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		
 		setBackground(Color.RED);

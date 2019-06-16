@@ -11,21 +11,20 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class ChoixMenu extends JPanel {
+public class Confirme extends JPanel {
 	
-	public ChoixMenu() {
+	public Confirme() {
 		super();
-		setLayout(new GridLayout(5,1));
+		setLayout(new GridLayout(1,5));
 		setBackground(Color.RED);
 
-		Option depot = new Option("DEPOT");
-		Option retrait = new Option("RETRAIT");
-		Option historique = new Option("HISTORIQUE DES TRANSACTIONS");
-
-		this.add(depot);
+		Option oui = new Option("OUI");
+		Option non = new Option("NON");
+		
 		this.add(Box.createRigidArea(new Dimension(0, 0)));
-		this.add(retrait);
+		this.add(oui);
 		this.add(Box.createRigidArea(new Dimension(0, 0)));
-		this.add(historique);
+		this.add(non);
+		this.add(Box.createRigidArea(new Dimension(0, 0)));
 	}
 }
