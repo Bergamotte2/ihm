@@ -236,6 +236,7 @@ public JPanel buildDepot() {
 		}
 		int c = choixMontant.getChoix();
 		history.addData(c);
+		changeFrame(buildChoixMenu());
 	}).start();
 	
 	Option retour = new Option("RETOUR");
@@ -274,6 +275,7 @@ public JPanel buildRetrait() {
 		}
 		int c = choixMontant.getChoix();
 		history.addData(-c);
+		changeFrame(buildChoixMenu());
 	}).start();
 	
 	Option retour = new Option("RETOUR");
@@ -296,7 +298,7 @@ public void fillHistory() {
 	//semaine étudiée
 	history.addData(LocalDate.now().minusDays(7), 800); //total banque = 1000
 	history.addData(LocalDate.now().minusDays(4), -780); //total banque = 220
-	history.addData(LocalDate.now().minusDays(3), +220); //total banque = 0
+	history.addData(LocalDate.now().minusDays(3), +220); //total banque = 0*/
 	history.addData(500);
 }
 
