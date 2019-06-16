@@ -1,18 +1,20 @@
-package metier;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
 
-import application.FenetreATM;
-import sdd.HistoriqueTransferts;
-
-public class TestGraphique {
+public class LoopBrightness {
 
 	public static void main(String[] args) {
-		
+		LoopBrightness loop = new LoopBrightness();
+		loop.putMessage();
 
-		//LANCEMENT DU LOOP SETBRIGHTNESS
+	} //END OF MAIN
+	
+	
+	
+	public synchronized void putMessage(){
+		// SET BRIGHTNESS
 		 String[] command =
 	    {
 	        "cmd",
@@ -27,12 +29,23 @@ public class TestGraphique {
 	    new Thread(new SyncPipe(p.getErrorStream(), System.err)).start();
 	    new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
 	    PrintWriter stdin = new PrintWriter(p.getOutputStream());
+	    
 	    stdin.println("cd /");
 	    stdin.println("cd \\_SEMESTRE 2_\\IHM\\ihm\\runnable");
-	    stdin.println("LoopBrightness.jar");
+	    for (int i=0; i!=-1; i++) {
+		    Integer btni = 20*i%100;
+		    String btn = btni.toString();
+		    stdin.println("nircmd.exe setbrightness " + btn);
+		    stdin.flush();
+		    //wait some time
+		    try {
+				wait(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		    
+	    }
 	    stdin.close();
-			    
-		//OUVERTURE FENETRE
-		new FenetreATM();
 	}
+
 }
