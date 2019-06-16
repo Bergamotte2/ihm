@@ -34,6 +34,7 @@ public class FenetreATM extends JFrame {
 	public void changeFrame(JPanel content) {
 		setContentPane(content);
 		setVisible(true);
+		this.requestFocus();
 	}
 	
 	public void buildFrame() {
@@ -41,22 +42,10 @@ public class FenetreATM extends JFrame {
 	    setExtendedState(MAXIMIZED_BOTH);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		changeFrame(buildCode());
+		changeFrame(buildInserer());
 	}
 	
 	public JPanel buildHeader() {
-		for( ComponentListener al : this.getComponentListeners() ) {
-	        this.removeComponentListener( al );
-	    }
-		
-		for( KeyListener al : this.getKeyListeners() ) {
-	        this.removeKeyListener( al );
-	    }
-		
-		for( MouseListener al : this.getMouseListeners() ) {
-	        this.removeMouseListener( al );
-	    }
-		
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(new BorderLayout());
 		contentPane.setOpaque(true);
@@ -128,6 +117,7 @@ public JPanel buildLectureCarte() {
 }
 
 public JPanel buildCode() {
+	
 	JPanel contentPane = buildHeader();
 	
 	JPanel centerPane = new JPanel();
@@ -138,18 +128,20 @@ public JPanel buildCode() {
 	
 	ConteneurMilieu cM = new ConteneurMilieu("<html><center>Veuillez saisir votre code confidentiel</center></html>", 50, codeBanque);
 	
-	centerPane.add(cM);	
+	centerPane.add(cM);
 	
 	new Thread(() -> {
 		while(!codeBanque.getCode().equals("0000")) {
-			System.out.println(codeBanque.getCode());
+			try {
+				Thread.sleep(1);
+			} catch (Exception e) {
+			}
 		}
 		changeFrame(buildVerification());
 	}).start();
 	
 	
 	contentPane.add(centerPane, BorderLayout.CENTER);
-	
 	
 	return contentPane;
 }
@@ -235,7 +227,7 @@ public JPanel buildDepot() {
 	
 	centerPane.add(cM);
 	
-	/*new Thread(() -> {
+	new Thread(() -> {
 		while(choixMontant.getChoix()==0) {
 			try {
 				Thread.sleep(1);
@@ -243,8 +235,8 @@ public JPanel buildDepot() {
 			}
 		}
 		int c = choixMontant.getChoix();
-		if (c==1) changeFrame(buildDepot());
-	}).start();*/
+		history.addData(c);
+	}).start();
 	
 	Option retour = new Option("RETOUR");
 	centerPane.add(retour);
@@ -273,7 +265,7 @@ public JPanel buildRetrait() {
 	
 	centerPane.add(cM);
 	
-	/*new Thread(() -> {
+	new Thread(() -> {
 		while(choixMontant.getChoix()==0) {
 			try {
 				Thread.sleep(1);
@@ -281,8 +273,8 @@ public JPanel buildRetrait() {
 			}
 		}
 		int c = choixMontant.getChoix();
-		if (c==1) changeFrame(buildDepot());
-	}).start();*/
+		history.addData(-c);
+	}).start();
 	
 	Option retour = new Option("RETOUR");
 	centerPane.add(retour);

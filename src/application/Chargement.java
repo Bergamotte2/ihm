@@ -38,7 +38,6 @@ public class Chargement extends JPanel {
 		    @Override
 		    public void run(){
 		    	ended = true;
-		    	System.out.println("k,");
 		    }
 		},nombreAleatoire);
 		
