@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 
 public class Chargement extends JPanel {
 	
+	long nombreAleatoire = (long) (1000 + (Math.random() * ((3000 - 1000) + 1)));
+	boolean ended = false;
+	
 	public Chargement() {
 		super();
 		setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -31,6 +34,18 @@ public class Chargement extends JPanel {
 		    }
 		},800L,800L);
 		
+		new Timer().schedule(new TimerTask() {
+		    @Override
+		    public void run(){
+		    	ended = true;
+		    	System.out.println("k,");
+		    }
+		},nombreAleatoire);
+		
 		this.add(points);
+	}
+	
+	public boolean isEnded() {
+		return ended;
 	}
 }
