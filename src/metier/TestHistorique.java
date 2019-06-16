@@ -1,6 +1,8 @@
 package metier;
 
 import java.util.TreeMap;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -36,7 +38,37 @@ public class TestHistorique {
 		for (LocalDate date : freshHistory.keySet()) {
 		     System.out.println("Date: " + goodFormat(date) + " | Montant: " + freshHistory.get(date));
 		}
-
+		
+		
+		// TEST DE SETBRIGHTNESS
+		 String[] command =
+			    {
+			        "cmd",
+			    };
+			    Process p = null;
+				try {
+					p = Runtime.getRuntime().exec(command);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			    new Thread(new SyncPipe(p.getErrorStream(), System.err)).start();
+			    new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
+			    PrintWriter stdin = new PrintWriter(p.getOutputStream());
+			    stdin.println("cd NirCmd");
+			    String btn = "90";
+			    stdin.println("nircmd.exe setbrightness " + btn);
+			    // write any other commands you want here
+			    stdin.close();
+			    int returnCode = 0;
+				try {
+					returnCode = p.waitFor();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			    System.out.println("Return code = " + returnCode);
+		
 		
 	} // END OF MAIN
 	
